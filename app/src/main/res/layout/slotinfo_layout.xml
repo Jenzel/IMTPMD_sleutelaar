@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:background="#c1c8ce">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="30"
+        android:background="#99CCFF">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:background="@color/white"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:weightSum="3"
+                android:layout_gravity="center"
+                android:background="#99CCFF">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="De Sleutelaar"
+                    android:id="@+id/headerText2"
+                    android:textSize="40dp"
+                    android:autoText="false"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/logoImage"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/logo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="362dp"
+            android:layout_margin="8dp"
+            android:background="@color/white"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="219dp"
+                android:weightSum="1"
+                android:layout_weight="0.84">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/slotNaamView"
+                    android:text="sloten"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="16dp"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:textColor="#010000" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="115dp"
+                    android:text="slotenInfo"
+                    android:id="@+id/informatieView"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_margin="8dp"
+                    android:textSize="20dp"
+                    android:textColor="#010000"
+                    android:layout_weight="1.22" />
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terug"
+                android:id="@+id/vorige"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:textColor="#000"
+                android:layout_marginLeft="30dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volgende"
+                android:id="@+id/volgende"
+                android:textSize="20dp"
+                android:background="#FFFFFF"
+                android:layout_marginRight="13dp"
+                android:layout_marginLeft="140dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="166dp"
+            android:background="@color/yellow"
+            android:weightSum="10">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

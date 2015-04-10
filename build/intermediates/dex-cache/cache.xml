@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Jens\AppData\Local\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-ca3d2a01904dbb6e8422d84bab402ab73828b140.jar" />
+    </item>
+    <item
+        jar="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\pre-dexed\debug\classes-7de32c092f6331d8b8ac2f3d59dadae28f734c29.jar" />
+    </item>
+    <item
+        jar="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-396b67a328296c0877e67a638fb614a9932398e0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Jens\Desktop\De sleutelaar masterss\deSleutelaar-master\app\build\intermediates\pre-dexed\debug\classes-fe27de48c280af858ce7195220034e4cd736361f.jar" />
+    </item>
+
+</items>
