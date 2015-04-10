@@ -21,7 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Slotinfoscherm extends Activity {
+public class Slotinfoscherm extends Activity implements OnClickListener {
 
     public static String ipadres = Hoofdscherm.ipadres;
     public static int port = Hoofdscherm.port;
@@ -38,6 +38,13 @@ public class Slotinfoscherm extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slotinfo_layout);
+
+
+
+        vorigeVenster = (Button) findViewById(R.id.vorige);
+        vorigeVenster.setOnClickListener(this);
+        volgendeVenster = (Button) findViewById(R.id.volgende);
+        volgendeVenster.setOnClickListener(this);
 
         Intent intent = getIntent();
         systeemKeuze = intent.getStringExtra("naam");
@@ -81,24 +88,44 @@ public class Slotinfoscherm extends Activity {
         return true;
     }
 
-//    @Override
-//    public void onClick(View v) {
-//
-//        switch (v.getId()) {
-//            case R.id.vorige:
-//                Intent iback = new Intent(this, Hoofdscherm.class);
-//                startActivity(iback);
-//
-//                finish();
-//                break;
-//            case R.id.volgende:
-//
-//                Intent inext = new Intent(this, Bestellingscherm.class);
-//                inext.putExtra("gekozen", (String) systeemKeuze);
-//                startActivity(inext);
-//
-//                finish();
-//                break;
-//        }
-//    }
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.vorige:
+                Intent iback = new Intent(this, Hoofdscherm.class);
+                startActivity(iback);
+
+                finish();
+                break;
+            case R.id.volgende:
+
+                Intent inext = new Intent(this, Bestellingscherm.class);
+                inext.putExtra("gekozen", (String) systeemKeuze);
+                startActivity(inext);
+
+                finish();
+                break;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent ihome = new Intent(this, Hoofdscherm.class);
+                startActivity(ihome);
+                finish();
+                return (true);
+        }
+        return (super.onOptionsItemSelected(item));
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            onBackPressed();
+        }
+        return true;
+    }
 }
