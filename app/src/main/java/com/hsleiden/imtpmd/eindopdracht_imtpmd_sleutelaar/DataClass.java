@@ -13,12 +13,14 @@ import android.content.SharedPreferences.Editor;
 
 public class DataClass {
 
-    private static DataClass _instance;
-    private static final String PREFS_NAME = "Eindopdracht de Sleutelaar";
-    private SharedPreferences settings;
+    //Van te voren geïnitieerde instellingen die doorgegeven worden aan de overige classes
     private Editor editor;
-    public static String[] mainViewPreferences = { "spinnerDropdown" };
-    public static String[] customerInfoPreferences = { "naam", "adres", "telefoon", "email" };
+    private SharedPreferences instellingen;
+
+    private static final String PREFS_NAME = "Eindopdracht de Sleutelaar";
+    public static String[] hoofdschermDefault = { "spinnerDropdown" };
+    public static String[] klantenInfoDefault = { "naam", "adres", "telefoon", "email" };
+    private static DataClass _instance;
 
     public static DataClass getInstance(Context c)
     {
@@ -30,46 +32,48 @@ public class DataClass {
 
     private DataClass(Context c)
     {
-        settings = c.getSharedPreferences(PREFS_NAME, 0);
-        editor = settings.edit();
+        instellingen = c.getSharedPreferences(PREFS_NAME, 0);
+        editor = instellingen.edit();
     }
 
     public String[] getMainActivityPreferences()
     {
         ArrayList<String> resp = new ArrayList<String>();
-        for(int i = 0; i < mainViewPreferences.length; i++)
+        for(int i = 0; i < hoofdschermDefault.length; i++)
         {
-            resp.add(settings.getString(mainViewPreferences[i], null));
+            resp.add(instellingen.getString(hoofdschermDefault[i], null));
         }
-        return (String[]) resp.toArray(new String[mainViewPreferences.length]);
+        return (String[]) resp.toArray(new String[hoofdschermDefault.length]);
     }
 
     public String[] getCustomerInfoPreferences()
     {
         ArrayList<String> resp = new ArrayList<String>();
-        for(int i = 0; i < customerInfoPreferences.length; i++)
+        for(int i = 0; i < klantenInfoDefault.length; i++)
         {
-            resp.add(settings.getString(customerInfoPreferences[i], null));
+            resp.add(instellingen.getString(klantenInfoDefault[i], null));
         }
-        return (String[]) resp.toArray(new String[customerInfoPreferences.length]);
+        return (String[]) resp.toArray(new String[klantenInfoDefault.length]);
     }
 
+    //Vaste instellingen na het laatste gebruik
     public void updateMainActivityPreferences(String[] input)
     {
         if(input == null)
             return;
         for(int i = 0; i < input.length; i++)
         {
-            editor.putString(mainViewPreferences[i], input[i]);
+            editor.putString(hoofdschermDefault[i], input[i]);
         }
         editor.commit();
     }
 
+    //Vaste gebruikersgegevens na het laatste gebruik
     public void updateCustomerInfoPreferences(String[] input)
     {
         for(int i = 0; i < input.length; i++)
         {
-            editor.putString(customerInfoPreferences[i], input[i]);
+            editor.putString(klantenInfoDefault[i], input[i]);
         }
         editor.commit();
     }

@@ -28,6 +28,7 @@ import com.hsleiden.imtpmd.eindopdracht_imtpmd_sleutelaar.Hoofdscherm;
 
 public class Bestellingscherm extends Activity implements OnClickListener {
 
+    //De strings, buttons, en textonderdelen van het Bestellingscherm
     private static String naam;
     private static String adres;
     private static String telefoon;
@@ -61,6 +62,7 @@ public class Bestellingscherm extends Activity implements OnClickListener {
         gekozen.setText("Uw keuze: "
                 + gekozenservice);
 
+        //De koppeling van de objecten uit de .xml files met de objecten uit het bestellingscherm
         afbreken = (Button) findViewById(R.id.vorige);
         afbreken.setOnClickListener(this);
         bestellen = (Button) findViewById(R.id.volgende);
@@ -128,6 +130,7 @@ public class Bestellingscherm extends Activity implements OnClickListener {
                 if(response == null){}
                  else{
                     gegevensFix = response.replace("null", "");
+                    //Na het voltooien ontvangt de gebruiker het succesvolle bericht
                     Toast.makeText(this, "Bedankt voor uw bestelling! Voor 12:00 uur besteld is vandaag nog binnen.", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(this, Hoofdscherm.class);
                     startActivity(intent);

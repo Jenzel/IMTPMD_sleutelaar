@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 public class Slotinfoscherm extends Activity implements OnClickListener {
 
+    //Het aanmaken van de strings, buttons en textviews voor het Slotinfoscherm
     public static String ipadres = Hoofdscherm.ipadres;
     public static int port = Hoofdscherm.port;
     private String completeInfo;
@@ -39,8 +40,7 @@ public class Slotinfoscherm extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.slotinfo_layout);
 
-
-
+        //Het koppelen van alle onderdelen aan de objecten uit de .xml files
         vorigeVenster = (Button) findViewById(R.id.vorige);
         vorigeVenster.setOnClickListener(this);
         volgendeVenster = (Button) findViewById(R.id.volgende);
@@ -53,6 +53,7 @@ public class Slotinfoscherm extends Activity implements OnClickListener {
         this.titel = titel;
         titel.setText(systeemKeuze);
 
+        //Een JObject haalt de uitgebreide informatie op
         JSONObject beknopteinfoJObject = new JSONObject();
         try {
             beknopteinfoJObject.put("informatie", systeemKeuze);
@@ -88,7 +89,7 @@ public class Slotinfoscherm extends Activity implements OnClickListener {
         return true;
     }
 
-    @Override
+    @Override   //De klik-actie opent bij het teruggaan het Hoofdscherm en bij het verder gaan het Bestellingscherm
     public void onClick(View v) {
 
         switch (v.getId()) {

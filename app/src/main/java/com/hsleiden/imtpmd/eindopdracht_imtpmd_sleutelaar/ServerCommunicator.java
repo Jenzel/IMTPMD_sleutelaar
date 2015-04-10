@@ -21,6 +21,7 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 
+//De servercommunicator die de verbinding regelt tussen de server en de App
 public class ServerCommunicator extends AsyncTask<Void, Void, String> {
 
     private Activity activity;

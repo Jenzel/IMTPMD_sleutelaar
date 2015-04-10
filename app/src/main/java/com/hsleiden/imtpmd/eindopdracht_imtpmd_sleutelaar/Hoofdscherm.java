@@ -18,16 +18,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Hoofdscherm extends Activity implements OnItemSelectedListener
-         {
+public class Hoofdscherm extends Activity implements OnItemSelectedListener, OnClickListener
+{
 
     ArrayAdapter<String> slotAdapter;
 
@@ -43,11 +43,12 @@ public class Hoofdscherm extends Activity implements OnItemSelectedListener
     Button bestelbutton;
 
 
-    @Override
+    @Override //Hier wordt de layout van de main screen aangeroepen en data uit de server opgehaald
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hoofdscherm_layout);
 
+        //Via JObjects worden alle slotsystemen opgehaald uit de server
         lijst = new ArrayList<String>();
         JSONObject lijstObject = new JSONObject();
         try {
@@ -96,6 +97,7 @@ public class Hoofdscherm extends Activity implements OnItemSelectedListener
 
             }
 
+            //Via JObjects wordt de beknopte informatie opgehaald
             slotenLijst = new ArrayList<JSONObject>();
             JSONObject beknopteinfoJObject = new JSONObject();
             try {
@@ -134,7 +136,7 @@ public class Hoofdscherm extends Activity implements OnItemSelectedListener
         spinner_item.setAdapter(slotAdapter);
         spinner_item.setOnItemSelectedListener(this);
         bestelbutton = (Button) findViewById(R.id.selecteren);
-//        bestelbutton.setOnClickListener(this);
+        bestelbutton.setOnClickListener(this);
 
         String[] pref = DataClass.getInstance(this)
                 .getMainActivityPreferences();
@@ -150,13 +152,13 @@ public class Hoofdscherm extends Activity implements OnItemSelectedListener
 
     //Het Slotinfoscherm wordt geopend zodra de deze geactiveerd wordt
     //Dat gebeurt indirect door de volgende-button
-//    public void onClick(View v) {
-//        Intent i = new Intent(Hoofdscherm.this, Slotinfoscherm.class);
-//        i.putExtra("naam", slotNaam.toString());
-//        startActivity(i);
-//    }
+    public void onClick(View v) {
+        Intent i = new Intent(Hoofdscherm.this, Slotinfoscherm.class);
+        i.putExtra("naam", slotNaam.toString());
+        startActivity(i);
+    }
 
-    @Override
+    @Override   //De slotenlijst wordt aan de textview gekoppeld met de bijbehorende posities
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,
                                long arg3) {
         // TODO Auto-generated method stub
